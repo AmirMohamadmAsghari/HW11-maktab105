@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stayle.css" />
+    <title>Task Management</title>
+  </head>
+  <body>
+    <div id="app">
+      <div style="background-color:rgb(66, 149, 228) ;" class="section" id="todo">
+        <h2>Tasks</h2>
+        <ul id="todo-list"></ul>
+      </div>
+
+      <div style="background-color: coral;" class="section" id="ongoing">
+        <h2>Doing</h2>
+        <ul id="ongoing-list"></ul>
+      </div>
+
+      <div style="background-color: darkgreen;" class="section" id="completed">
+        <h2>Completed</h2>
+        <ul id="completed-list"></ul>
+      </div>
+
+      <button style="background-color: darkseagreen;" id="add-task-button">Add Task</button>
+
+      <div id="task-modal" class="modal">
+        <div style="background-color: aqua;" class="modal-content">
+          <span class="close">&times;</span>
+          <label for="task-description">Task Description:</label>
+          <input type="text" id="task-description" placeholder="Description"/>
+          <label for="task-date">Task Date:</label>
+          <input type="date" id="task-date" placeholder="Select a date"/>
+          <button style="color: rgb(101, 223, 101);background-color: green;" id="add-task">Add Task</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>جدول با Tailwind CSS</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
+    <div class="container mx-auto mt-10">
+      <button id="deleteRowsButton" style="background-color: #3490dc; color: #ffffff; padding: 8px; margin-bottom: 8px;">Delete Rows 1-5</button>
+      <table id="colorTable" class="table-auto border-collapse w-full">
+        <thead>
+          <tr>
+            <th class="border-t border-b border-r p-2 text-center">class</th>
+            <th class="border-t border-b border-r p-2 text-center">Heading</th>
+            <th class="border-t border-b border-r p-2 text-center">Heading</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Row 1 -->
+          <tr>
+            <td class="border-t border-b border-r p-2 text-center">Default</td>
+            <td class="border-t border-b border-r p-2 text-center">cell</td>
+            <td class="border-t border-b border-r p-2 text-center">cell</td>
+          </tr>
+          <!-- Row 2 -->
+          <tr>
+            <td class="border-t border-b border-r p-2 text-center">Primary</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+          </tr>
+          <!-- Row 3 -->
+          <tr>
+            <td class="border-t border-b border-r p-2 text-center">
+              Secondary
+            </td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+            <td class="border-t border-b border-r p-2 text-center">cell</td>
+          </tr>
+          <!-- Row 4 -->
+          <tr>
+            <td class="border-t border-b border-r p-2 text-center">Success</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+          </tr>
+          <!-- Row 5 -->
+          <tr>
+            <td class="border-t border-b border-r p-2 text-center">Danger</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+          </tr>
+          <!-- Row 6 -->
+          <tr>
+            <td class="border-t border-b border-r p-2 text-center">Warning</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+          </tr>
+          <!-- Row 7 -->
+          <tr>
+            <td class="border-t border-b border-r p-2 text-center">Info</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+          </tr>
+          <!-- Row 8 -->
+          <tr>
+            <td class="border-t border-b border-r p-2 text-center">Light</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+          </tr>
+          <!-- Row 10 -->
+          <tr class="bg-gray-800 text-white">
+            <!-- Set a specific class for the last row -->
+            <td class="border-t border-b border-r p-2 text-center">Dark</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+            <td class="border-t border-b border-r p-2 text-center">Cell</td>
+          </tr>
+        </tbody>
+      </table>
+      <button id="addRowsButton" style="background-color: #38a169; color: #ffffff; padding: 8px; margin-top: 8px;">Add 3 Rows</button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var table = document.getElementById("colorTable");
+        var deleteRowsButton = document.getElementById("deleteRowsButton");
+        var addRowsButton = document.getElementById("addRowsButton");
+
+        // Define an array of colors
+        var colors = [
+          "#FFDDC1",
+          "#C1FFDD",
+          "#DDC1FF",
+          "#FFDDDD",
+          "#DDFFC1",
+          "#C1DDFF",
+          "#FFC1DD",
+          "#DDFFDD",
+          "#C1C1FF",
+          "#FFC1C1",
+        ];
+
+        // Function to delete rows 1-5
+        function deleteRows() {
+          for (var i = 0; i < 5; i++) {
+            table.deleteRow(1); // Delete the second row (index 1) repeatedly
+          }
+        }
+
+        // Function to add 3 rows
+        function addRows() {
+          for (var i = 0; i < 3; i++) {
+            var newRow = table.insertRow(table.rows.length - 1); // Insert before the last row
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            cell1.textContent = "New Row";
+            cell2.textContent = "Cell";
+            cell3.textContent = "Cell";
+            // Use colors from the array for the new rows
+            newRow.style.backgroundColor = colors[table.rows.length - 2];
+          }
+        }
+
+        // Event listener for the deleteRowsButton
+        deleteRowsButton.addEventListener("click", deleteRows);
+
+        // Event listener for the addRowsButton
+        addRowsButton.addEventListener("click", addRows);
+
+        // Initialize row colors
+        for (var i = 0; i < table.rows.length; i++) {
+          if (i !== 0 && i !== table.rows.length - 1) {
+            table.rows[i].style.backgroundColor = colors[i - 1];
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,257 @@
+body {
+  margin: 0;
+  margin-top: 50px;
+  font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background-color: black;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar a.logo {
+  float: left;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar a.register {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.navbar a.login {
+  background-color: #008cba;
+  color: white;
+  border-radius: 5px;
+}
+
+.blue-section {
+  background-color: #3498db;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.search-form input,
+.search-form select {
+  width: 30%;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-form button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.slider-container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.company-slide {
+  text-align: center;
+  position: relative;
+}
+
+.company-slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.company-info {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company-info h3 {
+  margin: 0;
+}
+
+.company-info span {
+  font-size: 1.2em;
+}
+.register-section {
+  background-color: rgba(240, 236, 236, 0.9);
+  padding: 20px;
+  text-align: right;
+  margin: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+  margin: 20px auto;
+  margin-top: 40px;
+}
+
+.register-section p {
+  font-size: large;
+}
+
+.horizontal-menu {
+  display: flex;
+  margin-top: 20px;
+}
+
+.horizontal-menu p,
+.horizontal-menu button {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgba(52, 152, 219, 0.9);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.latest-ads-section {
+  margin: 20px;
+  padding: 20px;
+}
+
+.latest-ads-section h2 {
+  text-align: right;
+  font-size: 1.5em;
+}
+
+.latest-ads-section hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #3498db;
+}
+
+.ads-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.company-box {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.company-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.company-box p {
+  margin: 8px 0;
+}
+
+.company-box label {
+  font-weight: bold;
+}
+
+.company-box input,
+.company-box select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.company-box button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popular-searches-section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  text-align: center; /* افزودن تنظیمات مربوط به متن */
+}
+
+.popular-searches-section p {
+  font-size: 1.5em;
+}
+
+.popular-searches-section hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #3498db;
+}
+
+.categories {
+  display: flex; /* استفاده از flex برای قرار دادن دسته‌بندها در یک خط */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px; /* افزودن margin بالا */
+}
+
+.category {
+  flex: 1; /* تساوی عرض هر دسته */
+  text-align: center; /* متنوع کردن قرارگیری متن */
+}
+
+.category h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px; /* افزودن فاصله بین عنوان و لیست */
+}
+
+.category ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.category li {
+  margin-bottom: 8px;
+  cursor: pointer;
+  color: #3498db;
+}
+
+.category li:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+
+      .yellow {
+        background-color: yellow;
+      }
+      .green {
+        background-color: green;
+      }
+      .red {
+        background-color: red;
+      }
+      .blue {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Sample data (replace this with your actual data)
+      let personArray = [
+        { name: "amir", age: 9, country: "USA" },
+        { name: "Ali", age: 31, country: "Canada" },
+        { name: "bob", age: 58, country: "UK" },
+        { name: "saeed", age: 80, country: "UK" }
+        // Add more objects as needed
+      ];
+
+      // Create the table dynamically based on the conditions
+      function createTable() {
+        let table = document.createElement("table");
+        let thead = document.createElement("thead");
+        let tbody = document.createElement("tbody");
+
+        // Create header row
+        let headerRow = document.createElement("tr");
+        let headers = ["Name", "Age", "Country"];
+
+        headers.forEach((headerText) => {
+          let th = document.createElement("th");
+          th.appendChild(document.createTextNode(headerText));
+          headerRow.appendChild(th);
+        });
+
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        // Create rows and apply conditions
+        personArray.forEach((person) => {
+          let row = document.createElement("tr");
+
+          // Add name, age, and country cells
+          Object.values(person).forEach((value) => {
+            let cell = document.createElement("td");
+            cell.appendChild(document.createTextNode(value));
+            row.appendChild(cell);
+          });
+
+          // Apply conditions based on age
+          if (person.age < 10) {
+            row.classList.add("yellow");
+          } else if (person.age >= 10 && person.age < 40) {
+            row.classList.add("green");
+          } else if (person.age >= 40 && person.age < 80) {
+            row.classList.add("red");
+          } else {
+            row.classList.add("blue");
+          }
+
+          tbody.appendChild(row);
+        });
+
+        table.appendChild(tbody);
+
+        // Append the table to the body or any other container element
+        document.body.appendChild(table);
+      }
+
+      // Call the function to create the table
+      createTable();
+    </script>
+  </body>
+</html>
